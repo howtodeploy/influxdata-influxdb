@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: kong
+    name: influxdb
     env: docker
     plan: starter
     numInstances: 1
