@@ -1,13 +1,13 @@
-name: kong
+name: influxdb
 providers:
   - render
   - digitalocean
   - docker
 services:
   - type: docker
-    name: kong
-    dockerfile: |
-      - FROM kong:latest
+    name: influxdb
+    dockerfile:
+      - FROM influxdb:latest
     docker_run_cmd: docker run -p 8086:8086 -v myInfluxVolume:/var/lib/influxdb2
       influxdb:latest
     instance_count: 1
