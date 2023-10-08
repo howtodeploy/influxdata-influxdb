@@ -1,1 +1,3 @@
-- FROM kong:latest
+[
+  "FROM influxdb:latest"
+]
