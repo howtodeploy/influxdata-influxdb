@@ -1,0 +1,18 @@
+name: kong
+providers:
+  - render
+  - digitalocean
+  - docker
+services:
+  - type: docker
+    name: kong
+    dockerfile: |
+      - FROM kong:latest
+    docker_run_cmd: docker run -p 8086:8086 -v myInfluxVolume:/var/lib/influxdb2
+      influxdb:latest
+    instance_count: 1
+    http_port: 8086
+    health_check:
+      port: 8086
+      http_path: /
+      initial_delay_seconds: 10
