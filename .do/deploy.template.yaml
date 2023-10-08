@@ -1,7 +1,7 @@
 spec:
-  name: kong
+  name: influxdb
   services:
-    - name: kong
+    - name: influxdb
       git:
         repo_clone_url: https://github.com/howtodeploy/influxdata-influxdb
         branch: main
