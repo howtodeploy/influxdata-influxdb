@@ -1,0 +1,15 @@
+spec:
+  name: kong
+  services:
+    - name: kong
+      git:
+        repo_clone_url: https://github.com/howtodeploy/influxdata-influxdb
+        branch: main
+      dockerfile_path: Dockerfile
+      instance_count: 1
+      http_port: 8086
+      health_check:
+        port: 8086
+        http_path: /
+        initial_delay_seconds: 10
+      envs: []
